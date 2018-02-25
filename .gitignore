@@ -2,3 +2,4 @@
 .db
 .files
 .tar.gz
+access_token.secret
