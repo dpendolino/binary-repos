@@ -11,10 +11,6 @@ before_install:
 - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 - sudo apt-get update
 - sudo apt-get -y install docker-ce
-- docker --version
-- docker images
-- df -h
-- docker pull dpendolino/darch-arch-base
 - go get github.com/pauldotknopf/github-release-sync
 script:
 - "./build && ./deploy"
