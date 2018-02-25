@@ -6,6 +6,8 @@ addons:
     packages:
     - golang-go
 before_install:
+- docker images
+- df -h
 - docker pull dpendolino/darch-arch-base
 - go get github.com/pauldotknopf/github-release-sync
 script:
