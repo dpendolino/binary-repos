@@ -1,0 +1,10 @@
+sudo: required
+services:
+- docker
+before_install:
+- docker pull dpendolino/darch-arch-base
+script:
+- "./build && ./deploy"
+env:
+  global:
+    secure: ClzUCvZ/Bsdk2wbaeVSpwc8bA30MvITuJIcxGOXZfFLPavEFdGUoCH7WJfGJhepkQ0Ske+0CtaPBPWDK/CvHDQKOBFn7SxEwoeh0dYL8LLDG6fhWTknfFCn/pJIil9PPHRDAqjQl0hztSKI/gHHyHIxDKu8Z043P8E04RJB46sryL/P6OvTVrEOyv0t5cjmKUo9DCQsnHI/hFsQQown3zPdkClYCYYv7ZYuLufAuVQjYZRWnEHrsWxG2J+IHKWtTxRnF4IhW2pOYQlwssUipTvrDyXOdJVTcNL02EuzzrngSrxvooEHImKDqrk9A4X8cHTwdT5WwXSM91s94Ej9QmSt3GiqRfyXCxSoR/XQL1gaAzSi1luy/cjda3c6FoVAkR88HZSqu6kH5/G+tAO1yLOTWDyictRBfz5tsIb76fBz4qQtJRv5NnqJ+j8toqZ0KK72pyQgj0LKEhuLHJNVcox53j+MMjDhY6L/ziwS6o5bzOmCzOPJz9cn1UhABNoVL5olAfd/4UrTZTjOo8ceQ9Ua7ecO2Du8ZhQPCz+EXmX+EEu4UTugRajPN/42+lBM2n3UbhPGdaiXNbLcjQ3vO0CrVLj0v7Uv5c920Bda7Mbu1s8zdHQYxDSX27tqwgX4kDM4ega+aHwK72BKABwea9sMtzobt57RdmizoEt3AjQg=
