@@ -5,8 +5,10 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # We use an image that has our repository already using.
 # Let's go back to using original pacman.conf.
-#rm /etc/pacman.conf
-#cp /etc/pacman.conf.org /etc/pacman.conf
+if [ -x /etc/pacman.conf.org ]; then
+    rm /etc/pacman.conf
+    cp /etc/pacman.conf.org /etc/pacman.conf
+fi
 
 pacman -Syy
 
@@ -19,16 +21,21 @@ build_package() {
   trizen -S --movepkg --movepkg-dir=packages --noconfirm --noedit $1
 }
 
+GPG_KEY='702353E0F7E48EDB'
+( gpg --keyserver ha.pool.sks-keyservers.net  --recv-keys "$GPG_KEY" || \
+  gpg --keyserver pgp.mit.edu --recv-keys "$GPG_KEY" || \
+  gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY" )
+
 # build_package alacritty-git
 # build_package antigen-git
 # build_package autorandr-git
 # build_package gitflow-avh
 # build_package gpmdp
 # build_package j4-dmenu-desktop
-# build_package ncurses5-compat-libs
+build_package ncurses5-compat-libs
 # build_package teamviewer-beta
 # build_package visual-studio-code-bin
-# build_package vmware-workstation12
+build_package vmware-workstation12
 build_package beautysh
 build_package dmenu-frecency-git
 build_package feh
@@ -43,7 +50,7 @@ build_package polybar
 build_package pulseaudio-ctl
 # build_package ttf-google-fonts-git
 build_package ttf-hack-powerline-git
-# build_package ttf-ms-fonts
+build_package ttf-ms-fonts
 build_package twmn-git
 # build_package zfs-auto-snapshot-git
 
