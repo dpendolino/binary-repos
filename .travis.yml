@@ -11,7 +11,7 @@ before_install:
 - sudo apt-get update
 - sudo apt-get -y install docker-ce
 - go get github.com/pauldotknopf/github-release-sync
-= df -i
+- df -i
 - docker info
 - docker -D pull dpendolino/darch-arch-base
 script:
