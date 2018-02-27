@@ -13,7 +13,9 @@ before_install:
 - go get github.com/pauldotknopf/github-release-sync
 - docker pull dpendolino/darch-arch-base
 script:
-- "./build && ./deploy"
+- "./build"
+- "ls packages/"
+- "./deploy"
 env:
   matrix:
   - PATH="$PATH:$HOME/go/bin"
