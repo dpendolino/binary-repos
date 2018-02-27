@@ -5,10 +5,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # We use an image that has our repository already using.
 # Let's go back to using original pacman.conf.
-if [ -x /etc/pacman.conf.org ]; then
-    rm /etc/pacman.conf
-    cp /etc/pacman.conf.org /etc/pacman.conf
-fi
+rm /etc/pacman.conf
+cp /etc/pacman.conf.org /etc/pacman.conf
 
 pacman -Syy
 
