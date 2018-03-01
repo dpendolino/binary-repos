@@ -7,15 +7,14 @@ addons:
     - golang-go
 before_install:
 - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu
+  $(lsb_release -cs) stable"
 - sudo apt-get update
 - sudo apt-get -y install docker-ce
 - go get github.com/pauldotknopf/github-release-sync
 - docker pull dpendolino/darch-arch-base
 script:
-- "./build"
-- "ls packages/"
-- "./deploy"
+- "./build && ./deploy"
 env:
   matrix:
   - PATH="$PATH:$HOME/go/bin"
@@ -23,4 +22,4 @@ env:
     secure: VTVtMi0F0HkKQUlSuAdvEFGHkukT8sNlGCiEFZ2dHye6OAj56aKENUEyYIS+6jyzJNy48eXuVX/FQLx+8HWYzHqHWObR1ApNkHm5lRcb6fOmDEPke2ux/QaT2iRxUR43e9JQ1tTXeSEJbXT1bFPnR9Rc12phPvm0gyhWlK9YgZb3p5+5CTnGN2SMSO0LAn9LbOexBByyzt8KHaRCn6D2+ngAx+okxxrarhH6hbfdfzlT/9gyCJHWGaRPfjML6t8KnXkklIkgqxxuaZU1SgBexh2pGeKPRBexKfSPz6WUYGu2DuWgjhjFZvrvj1Q26Qa8mYxnraympOwZqJ32eyam5eMsROkOxVu5HQpeah3Y1V3UF0QhsLDqc36e4dPsz5hHGna8a4bJHgZIAWIymbQbdjKcYbfOH5Wtd7RkZ39LsfA9UX4HpFt1BFHB6XO3uGWQwxiSRSddq7y5GWGwuW21H/rDq/9g70aK97hftSb8a3ov5dTS6s3Z0yVUjHIN+S2idTOK1UFjn6v5bYcjf7CcE5jU8zkLJ3zirZaFMakcnyM2ebIpWFmyjJKRe95D19ig34WV30/TIysu8RX7TuC/snKxojLqYn1ENrYQLhwWsud13syslnVk/CUSzpGCu8FviR+q1eZbxwfBfh2/DDY/gOGZOmu6xpiPHargVDzflhQ=
 notifications:
   slack:
-    secure: yiIV+GpEiLwCbOgoaR9YNNfSQTgn72k9pQLXU4vkZ9cDQpA2+S14rvg8acW1w+/JGRzOyhMFa/29yuGx94qOfoQVctRJfWhj5RTHh1flUetaHoYlzlh2fEOoZrqcCb/WnIbAxGLqCNiyVGyIUDrK4zXUUahfkt7FaOWUizHVlWpwiw58XcIiHyDIa7qQjLkCssLe8uEKS9JnbCk5QDMmRoKj7H4aD/IQyOz0kTvMdhBCTuR5u8iX5gDLHz+mD17XV+4UxOoDg4wrW4vbOZUrnE4ATFgzGVkOsPsBl3qswLGEbfSpDaIE8H9ghuCZd/98x2yyqLy7FnMio2tm/Obq4dvCSJTYL3/eK4fcTFgqNVWI5luavGzGis9Z1jzt+uIkNhhBzHF4pb6tRxX17vAO0OuwZ707q2r0zxIWlFg3xVOj9ycSU8LtPrnZ4wXjtODR1yPhm4ZoBsfx2+RjHjOVD0LWzBEUFAYMCWKvw3zwai5rpfSTPJR0p5OlWHBWfew06ZMXrXxPxfThg6Azf3lyr+MSRwwdSUVyM0OfUtX+1NelERSX8YZV2+hQlHzjeQ8956DY16PzCb0X0pDxmZS2NsPlUGCDpmHVTuXnj7IAUAef7aT1C7gyQtyKLJrHCPG85rsdBD0gCeAVox1hmTScqT1QoJ+h9eAPJNhCP8+Qbjw=
+    secure: SwYdz12C1EYKWMZE/8EfB4DfeygqRYzmMa82H5i5/k9jEWGUWYLS4ff/PfHUDpbbgWgcpoxha4l2zWMpptVoeRAx7rJChS+ByjHeWYNNRYt4I9QQwzc7pJ9KlTbHz7XtdSlf7heIQUdVP8pSZmdF0UTsNfRCB+LpYllcLcnCkaRcqo+zjp132tXSfxynv4cyKeszNP5YG498dQtRSlV8PM57BSa0uhazw1UTX1NK3AiYt2+eVqysOHx0Msiqz3Sc61jgRQ0gXzXbnVA128/6Fbfo6x33eFfDZhuIHwIEGQj0/ttnqpM7CX3sQyVbQfGgrEU3nkFYEfSMyKkVeyjbnrA9lYe8yciUqT294SRJR1uTaJfXaPuM8gONQAbUPkUTYA/o4qkGgJxuPqcbPRbK0/b0cUYYV89BscwUkQO/tJ+8O4o56+ewmbDyj8F5zfHLXfgiY8zHdtzWNOyDyFTZJwciDWGAmnJ6lr1m6keSVcXwcuOOh7831KeNoHLnOIvMTDvQGWiukUIQhfEfKv93GnjgYVBpsSP6586pivhnK1/WOj5uUOl2TsSA390WK5hXR9pNUZXgQYRUA/ruiedcOCtQuzGytIvB3hU1ekFfR+h2hL2GyEtblJk70ejbidnTruwNllIRb4OgSdlSJ85v3awCacsmB5oCeIUfPhKa5Pg=
