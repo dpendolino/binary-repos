@@ -48,6 +48,5 @@ build_package ttf-google-fonts-git
 build_package ttf-hack-powerline-git
 # build_package ttf-ms-fonts
 build_package twmn-git
-build_package zfs-auto-snapshot-git
 
 repo-add packages/dpendolino.db.tar.gz packages/*.pkg.tar.xz
