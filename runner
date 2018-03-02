@@ -44,7 +44,7 @@ build_package ntfy-git
 build_package packer-io
 build_package polybar
 build_package pulseaudio-ctl
-build_package ttf-google-fonts-git
+# build_package ttf-google-fonts-git
 build_package ttf-hack-powerline-git
 # build_package ttf-ms-fonts
 build_package twmn-git
