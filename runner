@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 # We use an image that has our repository already using.
 # Let's go back to using original pacman.conf.
 rm /etc/pacman.conf
@@ -25,28 +23,29 @@ GPG_KEY='702353E0F7E48EDB'
   gpg --keyserver keyserver.pgp.com --recv-keys "$GPG_KEY" )
 
 # build_package alacritty-git
+# build_package ttf-google-fonts-git
+# build_package ttf-ms-fonts
+build keybase-bin
 build_package autorandr-git
-build_package gitflow-avh
-build_package gpmdp
-build_package j4-dmenu-desktop
-build_package ncurses5-compat-libs
-build_package vmware-workstation12
 build_package beautysh
 build_package dmenu-frecency-git
 build_package feh
+build_package gitflow-avh
 build_package google-chrome
 build_package google-cloud-sdk
+build_package gpmdp
 build_package hstr-git
+build_package j4-dmenu-desktop
 build_package kitty
 build_package modprobed-db
+build_package ncurses5-compat-libs
 build_package nerd-fonts-complete
 build_package ntfy-git
 build_package packer-io
 build_package polybar
 build_package pulseaudio-ctl
-# build_package ttf-google-fonts-git
 build_package ttf-hack-powerline-git
-# build_package ttf-ms-fonts
 build_package twmn-git
+build_package vmware-workstation12
 
 repo-add packages/dpendolino.db.tar.gz packages/*.pkg.tar.xz
