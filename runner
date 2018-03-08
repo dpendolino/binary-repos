@@ -25,7 +25,7 @@ GPG_KEY='702353E0F7E48EDB'
 # build_package alacritty-git
 # build_package ttf-google-fonts-git
 # build_package ttf-ms-fonts
-build_package keybase-bin
+# build_package keybase-bin
 build_package autorandr-git
 build_package beautysh
 build_package dmenu-frecency-git
