@@ -31,6 +31,7 @@ build_package beautysh
 build_package dmenu-frecency-git
 build_package feh
 build_package gitflow-avh
+build_package gitflow-bashcompletion-avh
 build_package google-chrome
 build_package google-cloud-sdk
 build_package gpmdp
